@@ -40,7 +40,7 @@ public class UserMgmtServiceImpl implements UserMgmtService{
 	@Override
 	public String loginCheck(LoginForm loginform) {
 		// TODO Auto-generated method stub
-		return null;
+		return "login.html";
 	}
 
 	@Override
