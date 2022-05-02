@@ -34,7 +34,7 @@ public class UserMgmtServiceImpl implements UserMgmtService{
 	@Override
 	public String emailCheck(String emaiId) {
 		// TODO Auto-generated method stub
-		return null;
+			return userRepo.findByEmail(emaiId);
 	}
 
 	@Override
