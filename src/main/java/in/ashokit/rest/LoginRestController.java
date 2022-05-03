@@ -1,6 +1,10 @@
 package in.ashokit.rest;
 
+import java.io.IOException;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,16 +17,10 @@ import in.ashokit.service.UserMgmtService;
 public class LoginRestController {
 	@Autowired
 	private UserMgmtService userMgmtService;
-	@PostMapping("/login")
-	public String loginCheck(@RequestBody LoginForm loginform) {
-		return userMgmtService.loginCheck(loginform);
+	@GetMapping("/login")
+	public ResponseEntity<String> signin( LoginForm login) throws Exception{
 		
-	}
-	@PostMapping("/email")
-	public String emailCheck(@RequestBody String emaiId) {
-		return  userMgmtService.emailCheck(emaiId);
-		
-	}
-
-
-}
+		String logindtls=userMgmtService.signIn(login);
+		return new ResponseEntity<>(logindtls,HttpStatus.ACCEPTED);
+	}}
+	

@@ -18,23 +18,32 @@ public class UserDtlsEntity {
 	@Id
 	@GeneratedValue
 	@Column(name="USER_ID")
-	private Integer userId;
+	private Integer id;
+	
 	@Column(name="FIRST_NAME")
 	private String firstName;
+	
 	@Column(name="LAST_NAME")
 	private String lastName;
+	
 	@Column(name="USER_EMAIL")
-	private String userEmail;
+	private String email;
+	
 	@Column(name="USER_PWD")
-	private String userPwd;
+	private String pwd;
+	
 	@Column(name="USER_MOBILE")
-	private String userMobile;
+	private String mobile;
+	
 	@Column(name="DOB")
 	private String dob;
+	
 	@Column(name="GENDER")
 	private String gender;
+	
 	@Column(name="CITY_ID")
 	private String cityId;
+	
 	@Column(name="STATE_ID")
 	private String stateId;
 	@Column(name="COUNTRY_ID")
